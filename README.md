@@ -54,8 +54,10 @@ asymmetry is deliberate, so don't add it to every card.
 
 - The page is monochrome on purpose. Every colour on it comes from the film
   frames and the bio photograph, and only once you look at them.
-- On a mouse, a still is desaturated until you hover it, then it develops and
-  starts playing silently. The bio photograph does the same, minus the playback.
+- On a mouse, a still is desaturated until you hover it, then it develops to
+  colour straight away, and the film itself starts playing silently once you
+  have held the cursor there for three seconds. That hold is `PREVIEW_DELAY` in
+  `site.js`. The bio photograph does the same, minus the playback.
 - On a phone there is no cursor, so position does the work instead: whatever is
   in the middle of the screen is in full colour, and each frame fades back to
   monochrome as it scrolls away from the centre. `site.js` writes a `--dev`
@@ -79,6 +81,6 @@ asymmetry is deliberate, so don't add it to every card.
 It is a static site, so anything will host it: Netlify, Vercel, GitHub Pages,
 Cloudflare Pages. Drag the folder in.
 
-Still placeholder, and worth fixing before the link goes anywhere: the
-**Instagram and Vimeo handles** in the contact list, the **Yinson subtitle**,
-and the **NXzen subtitle**, which currently repeats Adecco's.
+Still placeholder, and worth fixing: the **Yinson subtitle**, the **NXzen
+subtitle**, which currently repeats Adecco's, and the **hero line** under the
+heading.

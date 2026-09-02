@@ -396,7 +396,9 @@ html:not(.is-loading) .hero .rail{ opacity:1; }
   margin:clamp(46px, 6.5vw, 92px) 0 0;
   padding:0;
   display:grid;
-  grid-template-columns:repeat(4, minmax(0,1fr));
+  /* one equal column per item, however many there are */
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(0, 1fr);
   gap:clamp(14px, 2.2vw, 36px);
   border-top:1px solid var(--rule);
 }
@@ -527,7 +529,8 @@ body.is-locked{ overflow:hidden; }
   }
 
   .contact__links{
-    grid-template-columns:1fr;
+    grid-auto-flow:row;
+    grid-auto-columns:auto;
     gap:0;
   }
   .contact__links li{
@@ -560,7 +563,7 @@ body.is-locked{ overflow:hidden; }
   .film__trigger:focus-visible .film__still{
     filter:grayscale(calc(1 - var(--dev, 0)))
            contrast(calc(1.06 - .06 * var(--dev, 0)))
-           brightness(calc(.62 + .38 * var(--dev, 0)));
+           brightness(calc(.52 + .48 * var(--dev, 0)));
     transform:scale(calc(1.012 + .018 * var(--dev, 0)));
     transition:none;
   }
@@ -569,7 +572,7 @@ body.is-locked{ overflow:hidden; }
   .portrait:hover img{
     filter:grayscale(calc(1 - var(--dev, 0)))
            contrast(calc(1.04 - .04 * var(--dev, 0)))
-           brightness(calc(.74 + .26 * var(--dev, 0)));
+           brightness(calc(.66 + .34 * var(--dev, 0)));
     transform:none;
     transition:none;
   }

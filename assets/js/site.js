@@ -84,10 +84,11 @@
 
       var paint = function () {
         painting = false;
-        var vh   = window.innerHeight;
-        var mid  = vh / 2;
-        var hot  = vh * 0.10;   // full colour this close to the middle
-        var cold = vh * 0.46;   // fully monochrome this far from it
+        var vh    = window.innerHeight;
+        var mid   = vh / 2;
+        var hot   = vh * 0.06;   // full colour only this close to the middle
+        var cold  = vh * 0.28;   // fully monochrome by this far from it
+        var BITE  = 1.35;        // >1 pulls the curve toward monochrome sooner
 
         developable.forEach(function (el) {
           var r = el.getBoundingClientRect();
@@ -97,7 +98,7 @@
             var d = Math.abs(r.top + r.height / 2 - mid);
             var t = (cold - d) / (cold - hot);
             t = t < 0 ? 0 : (t > 1 ? 1 : t);
-            dev = t * t * (3 - 2 * t);   // ease both ends of the fade
+            dev = Math.pow(t * t * (3 - 2 * t), BITE);   // ease, then bias down
           }
 
           el.style.setProperty('--dev', dev.toFixed(3));
@@ -123,7 +124,7 @@
      YouTube reports it is actually playing, so the player's own loading
      chrome never shows through the frame.                             */
 
-  var PREVIEW_DELAY = 200;      // ms of intent before we spend a request
+  var PREVIEW_DELAY = 3000;     // hold the cursor this long before a film plays
   var apiState = 0;             // 0 idle, 1 loading, 2 ready
   var apiQueue = [];
 
