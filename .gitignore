@@ -1,0 +1,6 @@
+.DS_Store
+.claude/
+
+# Camera originals and masters — 21MB, not needed to serve the site.
+# Delete this line if you'd rather keep them backed up on GitHub too.
+Source Files/
