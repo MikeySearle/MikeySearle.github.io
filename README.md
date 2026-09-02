@@ -56,7 +56,7 @@ asymmetry is deliberate, so don't add it to every card.
   frames and the bio photograph, and only once you look at them.
 - On a mouse, a still is desaturated until you hover it, then it develops to
   colour straight away, and the film itself starts playing silently once you
-  have held the cursor there for three seconds. That hold is `PREVIEW_DELAY` in
+  have held the cursor there for 2.2 seconds. That hold is `PREVIEW_DELAY` in
   `site.js`. The bio photograph does the same, minus the playback.
 - On a phone there is no cursor, so position does the work instead: whatever is
   in the middle of the screen is in full colour, and each frame fades back to

@@ -124,7 +124,7 @@
      YouTube reports it is actually playing, so the player's own loading
      chrome never shows through the frame.                             */
 
-  var PREVIEW_DELAY = 3000;     // hold the cursor this long before a film plays
+  var PREVIEW_DELAY = 2200;     // hold the cursor this long before a film plays
   var apiState = 0;             // 0 idle, 1 loading, 2 ready
   var apiQueue = [];
 
