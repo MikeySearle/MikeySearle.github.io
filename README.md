@@ -27,10 +27,15 @@ four things: `data-video`, the `src` of the still, the client name and the
 subtitle. The still comes straight from YouTube, so you never upload one —
 `https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg`.
 
-Two cards are commented out because no YouTube link was supplied for them:
-**Origina** and **Applied Materials**. Paste the video ID into both
-`data-video` and the image `src`, delete the `<!--` and `-->` around the
-block, and they appear.
+One card is commented out because no YouTube link has been supplied for it:
+**Origina**. Paste the video ID into both `data-video` and the image `src`,
+delete the `<!--` and `-->` around the block, and it appears — then check the
+row spans below still add up.
+
+**Fix a bad crop.** Frames are cropped to 2.35:1. A film finished at that ratio
+lands perfectly, but one finished 16:9 loses a quarter of its height, which can
+clip heads. Add `--focus` to that card — `0%` holds the top of the still, `100%`
+the bottom, and leaving it off centres. Applied Materials is set to `15%`.
 
 **Lay out the grid.** Each card carries `style="--span:7;--push:0"`.
 `--span` is how many of the twelve columns it fills; `--push` nudges it down
@@ -72,6 +77,8 @@ asymmetry is deliberate, so don't add it to every card.
 ## Publishing
 
 It is a static site, so anything will host it: Netlify, Vercel, GitHub Pages,
-Cloudflare Pages. Drag the folder in. Before you do, replace the placeholder
-About copy, the phone number, the Instagram and Vimeo handles, and the
-"City, worldwide" line.
+Cloudflare Pages. Drag the folder in.
+
+Still placeholder, and worth fixing before the link goes anywhere: the
+**Instagram and Vimeo handles** in the contact list, the **Yinson subtitle**,
+and the **NXzen subtitle**, which currently repeats Adecco's.

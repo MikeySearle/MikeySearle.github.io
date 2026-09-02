@@ -41,7 +41,7 @@ body{
   line-height:1.5;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
-  overflow-x:hidden;
+  overflow-x:clip;
 }
 
 img{ display:block; max-width:100%; height:auto; }
@@ -209,6 +209,8 @@ html:not(.is-loading) .hero .rail{ opacity:1; }
 .film__still{
   width:100%; height:100%;
   object-fit:cover;
+  /* --focus moves the 2.35:1 crop up or down the still, per card. */
+  object-position:50% var(--focus, 50%);
   filter:grayscale(1) contrast(1.06) brightness(.58);
   transform:scale(1.012);
   transition:filter .75s var(--ease), transform 1.4s var(--ease);
@@ -306,6 +308,10 @@ html:not(.is-loading) .hero .rail{ opacity:1; }
 .portrait:hover img{
   filter:grayscale(0) contrast(1) brightness(1);
   transform:scale(1.02);
+}
+
+@media (min-width:821px){
+  .portrait{ position:sticky; top:96px; }
 }
 
 .prose{
