@@ -348,9 +348,11 @@ html:not(.is-loading) .hero .rail{ opacity:1; }
 }
 .ledger__row:first-child{ border-top:1px solid var(--rule); }
 
-/* metal is signalled by brightness, not by colour */
+/* metal is signalled by brightness, not by colour: gold brightest, then
+   silver at the default, then bronze */
 .ledger__metal{ color:var(--haze); }
 .ledger__metal--gold{ color:var(--paper); }
+.ledger__metal--bronze{ color:var(--haze-dim); }
 
 .ledger__project{ color:var(--paper); }
 .ledger__role{ color:var(--haze-dim); text-align:right; }
