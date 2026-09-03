@@ -56,6 +56,7 @@
     HOW TO EDIT A FILM CARD
     ───────────────────────
     data-video   the YouTube ID (the bit after youtu.be/)
+    data-role    your credit, shown under the title once the player opens
     --span       how many of the 12 columns the card fills (desktop only)
     --push       how far the card is nudged down the page, in px (desktop only)
     --focus      where the 2.35:1 crop sits on the still, 0% top to 100% bottom.
@@ -67,7 +68,7 @@
   <section id="work" class="work" aria-label="Selected films">
     <div class="grid">
 
-      <article class="film" data-video="LLFeIwLAFyw" style="--span:7;--push:0">
+      <article class="film" data-video="LLFeIwLAFyw" data-role="Director · Berlin" style="--span:7;--push:0">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/LLFeIwLAFyw/maxresdefault.jpg" alt="Frame from DeviantArt, Designed by Deviants" loading="lazy" decoding="async" width="1280" height="720">
@@ -81,7 +82,7 @@
         </button>
       </article>
 
-      <article class="film" data-video="vI97A2Y2RiU" style="--span:4;--push:180">
+      <article class="film" data-video="vI97A2Y2RiU" data-role="Director · Diriyah, Saudi Arabia" style="--span:4;--push:180">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/vI97A2Y2RiU/maxresdefault.jpg" alt="Frame from Diriyah, Building Vision 2030" loading="lazy" decoding="async" width="1280" height="720">
@@ -95,7 +96,7 @@
         </button>
       </article>
 
-      <article class="film" data-video="I_f2rPubftE" style="--span:5;--push:0">
+      <article class="film" data-video="I_f2rPubftE" data-role="On-set Director · Sweden" style="--span:5;--push:0">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/I_f2rPubftE/maxresdefault.jpg" alt="Frame from Polestar, Polstjärna" loading="lazy" decoding="async" width="1280" height="720">
@@ -110,7 +111,7 @@
         </button>
       </article>
 
-      <article class="film" data-video="-4TSScl1bxA" style="--span:6;--push:110">
+      <article class="film" data-video="-4TSScl1bxA" data-role="Director · United Kingdom" style="--span:6;--push:110">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/-4TSScl1bxA/maxresdefault.jpg" alt="Frame from Adecco, Making the Future Work" loading="lazy" decoding="async" width="1280" height="720">
@@ -144,21 +145,21 @@
       </article>
       -->
 
-      <article class="film" data-video="oMH13OYXkrA" style="--span:7;--push:90">
+      <article class="film" data-video="oMH13OYXkrA" data-role="Director · United States" style="--span:7;--push:90">
         <button class="film__trigger" type="button">
           <span class="film__frame">
-            <img class="film__still" src="https://img.youtube.com/vi/oMH13OYXkrA/maxresdefault.jpg" alt="Frame from Caird Center, Center of Sustainability" loading="lazy" decoding="async" width="1280" height="720">
+            <img class="film__still" src="https://img.youtube.com/vi/oMH13OYXkrA/maxresdefault.jpg" alt="Frame from Baird Center, Center of Sustainability" loading="lazy" decoding="async" width="1280" height="720">
             <span class="film__stage" aria-hidden="true"></span>
             <span class="film__cue" aria-hidden="true">Watch</span>
           </span>
           <span class="film__slate">
-            <span class="film__client">Caird Center</span>
+            <span class="film__client">Baird Center</span>
             <span class="film__title">Center of Sustainability</span>
           </span>
         </button>
       </article>
 
-      <article class="film" data-video="CM1mEXK-iSc" style="--span:5;--push:0">
+      <article class="film" data-video="CM1mEXK-iSc" data-role="Director · Africa &amp; United States" style="--span:5;--push:0">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/CM1mEXK-iSc/maxresdefault.jpg" alt="Frame from Bioculture, A Vital Step in Life Saving Cures" loading="lazy" decoding="async" width="1280" height="720">
@@ -174,7 +175,7 @@
 
       <!-- This film is finished 16:9, not scope, so --focus lifts the crop off
            the tops of their heads (and drops the burnt-in subtitle). -->
-      <article class="film" data-video="Pjyo66OEj34" style="--span:6;--push:140;--focus:15%">
+      <article class="film" data-video="Pjyo66OEj34" data-role="Cinematographer (DOP)" style="--span:6;--push:140;--focus:15%">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/Pjyo66OEj34/maxresdefault.jpg" alt="Frame from Applied Materials, Girls Day &mdash; Des Ailes Pour Toutes" loading="lazy" decoding="async" width="1280" height="720">
@@ -189,7 +190,7 @@
         </button>
       </article>
 
-      <article class="film" data-video="Gzla2dBXvBA" style="--span:5;--push:0">
+      <article class="film" data-video="Gzla2dBXvBA" data-role="Director · Shot around the world" style="--span:5;--push:0">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/Gzla2dBXvBA/maxresdefault.jpg" alt="Frame from Yinson" loading="lazy" decoding="async" width="1280" height="720">
@@ -204,7 +205,7 @@
         </button>
       </article>
 
-      <article class="film" data-video="K4j6Lb-5UPE" style="--span:4;--push:60">
+      <article class="film" data-video="K4j6Lb-5UPE" data-role="Director · Shot around the world" style="--span:4;--push:60">
         <button class="film__trigger" type="button">
           <span class="film__frame">
             <img class="film__still" src="https://img.youtube.com/vi/K4j6Lb-5UPE/maxresdefault.jpg" alt="Frame from NXzen" loading="lazy" decoding="async" width="1280" height="720">
@@ -277,13 +278,13 @@
         <span class="ledger__metal ledger__metal--gold">Gold</span>
         <span class="ledger__award">Telly Awards</span>
         <span class="ledger__project">Polestar</span>
-        <span class="ledger__role">On-site Director</span>
+        <span class="ledger__role">On-set Director</span>
       </li>
       <li class="ledger__row">
         <span class="ledger__metal ledger__metal--gold">Dolphin<i class="tbc">colour TBC</i></span>
         <span class="ledger__award">Cannes Corporate Media &amp; TV Awards</span>
         <span class="ledger__project">Polestar</span>
-        <span class="ledger__role">On-site Director</span>
+        <span class="ledger__role">On-set Director</span>
       </li>
       <li class="ledger__row">
         <span class="ledger__metal">Silver</span>

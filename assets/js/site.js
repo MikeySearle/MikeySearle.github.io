@@ -245,7 +245,7 @@
   var closeEl = document.getElementById('viewer-close');
   var lastFocus = null;
 
-  function open(id, client, title) {
+  function open(id, client, title, role) {
     lastFocus = document.activeElement;
 
     mount.innerHTML = '';
@@ -258,7 +258,18 @@
                 '&origin=' + encodeURIComponent(window.location.origin);
     mount.appendChild(frame);
 
-    slate.innerHTML = '<b>' + client + '</b> &nbsp;&mdash;&nbsp; ' + title;
+    slate.textContent = '';
+    var name = document.createElement('b');
+    name.textContent = client;
+    slate.appendChild(name);
+    slate.appendChild(document.createTextNode('\u00a0\u00a0\u2014\u00a0\u00a0' + title));
+
+    if (role) {
+      var credit = document.createElement('span');
+      credit.className = 'viewer__role';
+      credit.textContent = role;
+      slate.appendChild(credit);
+    }
 
     viewer.hidden = false;
     document.body.classList.add('is-locked');
@@ -281,6 +292,7 @@
     var trigger = film.querySelector('.film__trigger');
     var client  = (film.querySelector('.film__client') || {}).textContent || '';
     var title   = (film.querySelector('.film__title')  || {}).textContent || '';
+    var role    = film.getAttribute('data-role') || '';
 
     if (!trigger) return;
 
@@ -290,7 +302,7 @@
       trigger.disabled = true;
       return;
     }
-    trigger.addEventListener('click', function () { open(id, client, title); });
+    trigger.addEventListener('click', function () { open(id, client, title, role); });
   });
 
   closeEl.addEventListener('click', close);

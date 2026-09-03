@@ -477,6 +477,13 @@ html:not(.is-loading) .hero .rail{ opacity:1; }
 }
 .viewer__slate b{ color:var(--paper); font-weight:500; }
 
+.viewer__role{
+  display:block;
+  margin-top:8px;
+  color:var(--haze-dim);
+  letter-spacing:.15em;
+}
+
 .viewer__close{
   position:absolute; top:clamp(16px,3vw,34px); right:clamp(16px,4vw,44px);
   color:var(--haze);
