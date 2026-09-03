@@ -3,10 +3,12 @@
 Plain HTML, CSS and JavaScript. No build step, no dependencies to install.
 
 ```
-index.html            everything you'll normally edit
-assets/css/site.css   all styling
+index.html            the film index, about, awards, team
+contact.html          the enquiry form
+assets/css/site.css   all styling, both pages
 assets/js/site.js     hover previews, the player, scroll behaviour
-assets/img/           bio photograph
+assets/js/contact.js  the enquiry form: human check, honeypot, sending
+assets/img/           bio photograph, team portraits, share card
 ```
 
 ## Preview it locally
@@ -75,6 +77,28 @@ asymmetry is deliberate, so don't add it to every card.
 - Typefaces are Archivo (display and labels, using its variable width axis)
   and Newsreader (the italic subtitles and the About story), both from Google
   Fonts.
+
+## The enquiry form
+
+`contact.html` asks a client the things worth knowing before a first reply:
+what the film is for, what they need from you, where and when it shoots, and
+the budget range. Three things guard it, all in `contact.js`: a sum written in
+words that has to be answered, a honeypot field only a bot can see, and a
+three-second floor on how fast the form can be submitted.
+
+**Where the answers go.** Out of the box the form opens the sender's mail app
+with everything filled in and addressed to you, which needs no setup but relies
+on them pressing send. For answers to land in your inbox on their own, get a
+free endpoint from formspree.io or web3forms.com and paste it into `ENDPOINT`
+at the top of `contact.js`. Nothing else changes.
+
+## The share picture
+
+`assets/img/share.jpg` is what appears when the link is pasted into WhatsApp,
+Slack or a message. It is 1200x628 and referenced by absolute URL in the
+`og:image` tags of both pages — a relative path will not work, those services
+fetch the page from their own servers. Replace the file to change the preview,
+keeping roughly the same proportions.
 
 ## Publishing
 

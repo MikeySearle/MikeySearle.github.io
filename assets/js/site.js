@@ -75,6 +75,10 @@
     var portraitImg = portrait && portrait.querySelector('img');
     if (portraitImg) developable.push(portraitImg);
 
+    [].forEach.call(document.querySelectorAll('.crew__photo img'), function (img) {
+      developable.push(img);
+    });
+
     if (reduce.matches) {
       /* No scroll-linked change; leave every frame in colour. */
       developable.forEach(function (el) { el.style.setProperty('--dev', '1'); });
