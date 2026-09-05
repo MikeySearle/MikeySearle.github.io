@@ -20,6 +20,47 @@ python3 -m http.server 4321
 Then open <http://localhost:4321>. Open it over a server rather than
 double-clicking `index.html` — the YouTube previews need a real origin.
 
+## The motion study
+
+`motion.html` is a separate page, not linked from the site and marked
+`noindex`. It is a working sketch of the interaction language of sites like
+Resn's *Corn Revolutionized* — weighted scrolling, type that reacts to the
+pointer, scenes that hold while you scroll through them — written in the same
+plain HTML, CSS and JavaScript as the rest, with no libraries.
+
+```
+motion.html             the study
+assets/css/motion.css   its styling, loaded after site.css
+assets/js/motion.js     one animation loop driving everything
+```
+
+Open <http://localhost:4321/motion.html> alongside the local server above.
+
+What it does, section by section:
+
+1. **The cursor field.** Each headline is split into characters. Every frame,
+   each character measures its distance to the pointer and answers on the
+   variable axes of Archivo — `wght` and `wdth` — while leaning out of the way.
+   Tune it per headline with `data-radius`, `data-push`, `data-wght`,
+   `data-wdth`. The text stays real text: selectable, searchable, readable to a
+   screen reader.
+2. **Weighted scroll.** The page is a fixed sheet translated by hand each
+   frame, chasing the browser's scroll position instead of matching it. The lag
+   is the effect. An empty div behind it holds the real scroll height.
+3. **Parallax and shear.** The scroll velocity from step 2 drives a slow pan on
+   each still inside its frame, and a fraction of a degree of skew on the frame
+   itself.
+4. **Pinned scene.** A tall section whose inner panel is held in the viewport
+   while you scroll past it, with progress writing a `--p` custom property that
+   the copy and the progress rule both read.
+5. **Magnetic targets and the drawn cursor.** `data-magnetic` pulls an element
+   toward the pointer; the ring widens and picks up a label from `data-cue`.
+
+Everything degrades on its own: a touch device gets native scrolling and the
+system cursor, and `prefers-reduced-motion` turns off the sheet, the pinning
+and the field, leaving a static page that says the same things.
+
+
 ## Everyday edits
 
 Everything below lives in `index.html` and is marked with a comment.

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" class="is-loading">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion study — Michael Searle</title>
+<meta name="description" content="A scroll and cursor study: weighted scrolling, type that reacts to the pointer, pinned scenes. Built without libraries.">
+<meta name="theme-color" content="#070707">
+<meta name="robots" content="noindex">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070707'/%3E%3Crect x='7' y='10' width='18' height='12' fill='none' stroke='%23EDEAE3' stroke-width='2'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://img.youtube.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+</head>
+<body class="study">
+
+<!-- The drawn pointer. Sits outside the moving sheet. -->
+<div class="cursor" data-cursor aria-hidden="true">
+  <div class="cursor__ring"><span class="cursor__label"></span></div>
+  <div class="cursor__dot"></div>
+</div>
+
+<div class="study-bar">
+  <a href="index.html">← Back to the films</a>
+  <span>Motion study · no libraries</span>
+</div>
+
+<!-- Everything below is the sheet we translate ourselves. -->
+<div class="canvas" data-canvas>
+
+  <!-- ───────────────────── 01 · the cursor field ───────────────────── -->
+  <section class="bay open">
+    <p class="tag"><b>01</b><span>Type that answers the pointer</span></p>
+
+    <h1 class="field field--huge"
+        data-field
+        data-radius="230"
+        data-push="14"
+        data-wght="180 820"
+        data-wdth="80 122">Move across this line</h1>
+
+    <p class="hint">
+      Every character measures its distance to the pointer and answers on the
+      variable axes of the typeface — it thickens, widens, and leans out of the
+      way. Nothing here is an image or a canvas: it is live, selectable,
+      searchable text.
+    </p>
+
+    <p class="open__meta">
+      <span>Weighted scroll</span>
+      <span>Pinned scenes</span>
+      <span>Magnetic targets</span>
+      <span>Drawn cursor</span>
+    </p>
+  </section>
+
+  <!-- ───────────────────── 02 · weighted scroll ───────────────────── -->
+  <section class="bay">
+    <p class="tag"><b>02</b><span>Scroll with weight</span></p>
+    <h2 class="field field--mid" data-field data-radius="170" data-push="9" data-wght="200 760">The page arrives a beat after the wheel stops.</h2>
+    <p class="hint">
+      The document is a fixed sheet moved by hand each frame, chasing the real
+      scroll position rather than matching it. The lag is the whole effect — and
+      the same number, the velocity, drives the shear on the frames below and the
+      direction of the band beneath them.
+    </p>
+  </section>
+
+  <div class="strip">
+    <div class="strip__track" data-marquee="0.6">
+      <div class="strip__run">
+        <span>Documentary</span><i>●</i>
+        <span>Direction</span><i>●</i>
+        <span>Cinematography</span><i>●</i>
+        <span>Brand film</span><i>●</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────────── 03 · frames ───────────────────── -->
+  <section class="bay">
+    <p class="tag"><b>03</b><span>Parallax and shear</span></p>
+
+    <div class="frames">
+      <article class="plate" style="--span:7">
+        <div class="plate__shot" data-parallax="0" data-shear data-cue="Watch">
+          <span class="plate__pan" data-parallax="30"><img src="https://img.youtube.com/vi/LLFeIwLAFyw/maxresdefault.jpg" alt="Frame from DeviantArt, Designed by Deviants" loading="lazy" decoding="async" width="1280" height="720"></span>
+        </div>
+        <p class="plate__slate"><b>DeviantArt</b><span>Designed by Deviants</span></p>
+      </article>
+
+      <article class="plate" style="--span:5">
+        <div class="plate__shot" data-parallax="0" data-shear data-cue="Watch">
+          <span class="plate__pan" data-parallax="30"><img src="https://img.youtube.com/vi/vI97A2Y2RiU/maxresdefault.jpg" alt="Frame from Diriyah, Building Vision 2030" loading="lazy" decoding="async" width="1280" height="720"></span>
+        </div>
+        <p class="plate__slate"><b>Diriyah</b><span>Building Vision 2030</span></p>
+      </article>
+
+      <article class="plate" style="--span:5">
+        <div class="plate__shot" data-parallax="0" data-shear data-cue="Watch">
+          <span class="plate__pan" data-parallax="30"><img src="https://img.youtube.com/vi/I_f2rPubftE/maxresdefault.jpg" alt="Frame from Polestar, Polstjärna" loading="lazy" decoding="async" width="1280" height="720"></span>
+        </div>
+        <p class="plate__slate"><b>Polestar</b><span>Polstjärna</span></p>
+      </article>
+
+      <article class="plate" style="--span:7">
+        <div class="plate__shot" data-parallax="0" data-shear data-cue="Watch">
+          <span class="plate__pan" data-parallax="30"><img src="https://img.youtube.com/vi/oMH13OYXkrA/maxresdefault.jpg" alt="Frame from a selected film" loading="lazy" decoding="async" width="1280" height="720"></span>
+        </div>
+        <p class="plate__slate"><b>Selected</b><span>Brand film</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ───────────────────── 04 · pinned scene ───────────────────── -->
+  <section class="scene" data-scene>
+    <div class="scene__pin" data-pin>
+      <p class="tag"><b>04</b><span>One scene, held while you scroll through it</span></p>
+
+      <div class="steps">
+        <div class="step" data-step>
+          <span class="step__n">01 / 04</span>
+          <p>A film starts as <em>access</em> — being in the room at all.</p>
+        </div>
+        <div class="step" data-step>
+          <span class="step__n">02 / 04</span>
+          <p>Then <em>patience</em>. The shot arrives on its own schedule.</p>
+        </div>
+        <div class="step" data-step>
+          <span class="step__n">03 / 04</span>
+          <p>Then <em>structure</em>, which is only ever found in the edit.</p>
+        </div>
+        <div class="step" data-step>
+          <span class="step__n">04 / 04</span>
+          <p>What is left is the <em>person</em>, doing the work.</p>
+        </div>
+      </div>
+
+      <div class="gauge"><span class="gauge__read">SCENE PROGRESS</span></div>
+    </div>
+  </section>
+
+  <!-- ───────────────────── 05 · magnetic + serif field ───────────────────── -->
+  <section class="bay close">
+    <p class="tag"><b>05</b><span>Magnetic targets, and a lighter field on serif</span></p>
+
+    <h2 class="field field--serif" data-field data-radius="150" data-push="7" data-wght="220 620" data-wdth="100 100">Nothing on this page needs a framework.</h2>
+
+    <a class="pull" href="contact.html" data-magnetic="0.4" data-cue="Say hello">Get in touch</a>
+  </section>
+
+  <footer class="study-foot">
+    <p>A study, not the site. Vanilla HTML, CSS and JavaScript · <a href="index.html">back to the films</a></p>
+  </footer>
+</div>
+
+<!-- Holds the scroll height while the sheet above is fixed. -->
+<div class="spacer" data-spacer aria-hidden="true"></div>
+
+<script src="assets/js/motion.js"></script>
+</body>
+</html>
